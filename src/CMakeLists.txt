@@ -4,6 +4,8 @@ include_directories(../deps/darts-clone)
 include_directories(../deps/rapidjson-0.11)
 include_directories(../deps/tclap-1.2.1)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 # Library
 
 set(
@@ -56,7 +58,7 @@ set(
   UTF8Util.cpp
 )
 
-add_library(libopencc ${LIBOPENCC_SOURCES} ${LIBOPENCC_HEADERS})
+add_library(libopencc STATIC ${LIBOPENCC_SOURCES} ${LIBOPENCC_HEADERS})
 source_group(libopencc FILES ${LIBOPENCC_SOURCES} ${LIBOPENCC_HEADERS})
 
 GENERATE_EXPORT_HEADER(
