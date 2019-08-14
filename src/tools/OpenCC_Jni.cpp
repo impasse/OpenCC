@@ -7,7 +7,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-const char* className = "com/mokahr/medivh/engine/OpenCC";
+const char* className = "com/mokahr/neon/engine/OpenCC";
 
 class OpenCC {
 private:
