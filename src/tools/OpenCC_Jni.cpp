@@ -4,6 +4,8 @@
 #include <string>
 
 using std::string;
+using std::cout;
+using std::endl;
 
 const char* className = "com/mokahr/medivh/engine/OpenCC";
 
@@ -43,7 +45,7 @@ static JNINativeMethod methods[] = {{"convert",
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
   JNIEnv* env = NULL;
   if (JNI_OK != vm->GetEnv(reinterpret_cast<void**>(&env), JNI_VERSION_1_4)) {
-    std::cout << "JNI_OnLoad could not get JNI env" << std::endl;
+    cout << "JNI_OnLoad could not get JNI env" << endl;
     return JNI_ERR;
   }
 
@@ -51,7 +53,7 @@ JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
 
   if (env->RegisterNatives(clazz, methods,
                            sizeof(methods) / sizeof((methods)[0])) < 0) {
-    std::cout << "RegisterNatives error" << std::endl;
+    cout << "RegisterNatives error" << endl;
     return JNI_ERR;
   }
 
