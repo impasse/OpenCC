@@ -25,3 +25,8 @@ install(
   TARGETS opencc opencc_dict opencc_phrase_extract
   RUNTIME DESTINATION bin
 )
+
+install(
+  TARGETS opencc_jni
+  LIBRARY DESTINATION lib
+)
